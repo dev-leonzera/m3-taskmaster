@@ -7,10 +7,17 @@
 @stop
 
 @section('content')
-    <h3 style="text-align: center">Bem vindos ao Dashboard de Tarefas</h3>
+    <h3 style="text-align: center">Bem vindos ao Taskmaster</h3>
 
     <div>
         Últimas tarefas adicionadas:
+        <div>
+            <ul>
+                <li>
+                    <a href="#">Título da Tarefa</a>
+                </li>
+            </ul>
+        </div>
     </div>
 @stop
 

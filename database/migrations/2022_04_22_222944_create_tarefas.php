@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Carbon\Carbon;
 
 class CreateTarefas extends Migration
 {
@@ -17,7 +18,8 @@ class CreateTarefas extends Migration
             $table->id();
             $table->integer('id_designado');
             $table->string('titulo');
-            $table->date('data_criacao');
+            $table->date('data_criacao')->default(Carbon::now());
+            $table->date('data_entrega');
             $table->string('prioridade');
             $table->string('descricao');
             $table->string('situacao');

@@ -235,6 +235,10 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+        [
+            'type' => 'profile-widget',
+            'topnav_right' => true,
+        ],
 
         // Sidebar items:
         // [
@@ -250,18 +254,23 @@ return [
             'text'        => 'Tarefa',
             'icon'        => 'far fa-fw fa-file',
             'submenu' => [
-                [
-                    'text' => 'Lista de Tarefas',
-                    'url'  => 'tarefa',
-                    'icon' => 'fas fa-fw fa-user'
-                ],
+                // [
+                //     'text' => 'Lista de Tarefas',
+                //     'url'  => 'tarefa',
+                //     'icon' => 'fas fa-fw fa-user'
+                // ],
                 [
                     'text' => 'Criar nova tarefa',
-                    'url'  => 'tarefas/create',
+                    'url'  => 'tarefa/create',
                     'icon' => 'fas fa-fw fa-user'
-                ]
+                ],
             ]
         ],
+        [
+            'text' => 'Board',
+            'url'  => 'board',
+            'icon' => 'fas fa-fw fa-clipboard-list'
+        ]
         // ['header' => 'account_settings'],
         // [
         //     'text' => 'profile',
