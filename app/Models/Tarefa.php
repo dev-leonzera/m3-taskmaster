@@ -10,4 +10,9 @@ class Tarefa extends Model
     protected $table = 'tarefas';
     protected $primaryKey = 'id';
     protected $fillable = ['nome', 'email', 'telefone', 'endereco'];
+
+
+    public function projeto(){
+        return $this->belongsTo(Projeto::class);
+    }
 }

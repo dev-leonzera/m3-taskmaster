@@ -30,8 +30,8 @@ return [
     |
     */
 
-    'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_ico_only' => true,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>M3</b>Taskmaster',
+    'logo' => 'Taskmaster',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -65,11 +65,11 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
-    'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_image' => true,
+    'usermenu_desc' => true,
+    'usermenu_profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -194,7 +194,7 @@ return [
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -233,11 +233,7 @@ return [
         ],
         [
             'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
-        [
-            'type' => 'profile-widget',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
 
         // Sidebar items:
@@ -246,9 +242,36 @@ return [
         //     'text' => 'search',
         // ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text'        => 'Projeto',
+            'icon'        => 'far fa-fw fa-file',
+            'submenu' => [
+                [
+                    'text' => 'Lista de Projetos',
+                    'url'  => 'projetos',
+                    'icon' => 'fas fa-fw fa-user'
+                ],
+                [
+                    'text' => 'Criar novo projeto',
+                    'url'  => 'projeto/create',
+                    'icon' => 'fas fa-fw fa-user'
+                ],
+            ]
+        ],
+        [
+            'text'        => 'Clientes',
+            'icon'        => 'far fa-fw fa-file',
+            'submenu' => [
+                [
+                    'text' => 'Lista de Clientes',
+                    'url'  => 'clientes',
+                    'icon' => 'fas fa-fw fa-user'
+                ],
+                [
+                    'text' => 'Cadastrar novo cliente',
+                    'url'  => 'cliente/create',
+                    'icon' => 'fas fa-fw fa-user'
+                ],
+            ]
         ],
         [
             'text'        => 'Tarefa',
@@ -266,6 +289,8 @@ return [
                 ],
             ]
         ],
+
+
         [
             'text' => 'Board',
             'url'  => 'board',

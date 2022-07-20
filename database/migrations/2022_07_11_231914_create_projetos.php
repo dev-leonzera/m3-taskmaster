@@ -1,12 +1,11 @@
 <?php
 
-use App\Models\Projeto;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Carbon\Carbon;
 
-class CreateTarefas extends Migration
+class CreateProjetos extends Migration
 {
     /**
      * Run the migrations.
@@ -15,15 +14,12 @@ class CreateTarefas extends Migration
      */
     public function up()
     {
-        Schema::create('tarefas', function (Blueprint $table) {
+        Schema::create('projetos', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Projeto::class);
             $table->string('titulo');
+            $table->string('descricao');
             $table->date('data_criacao')->default(Carbon::now());
             $table->date('data_entrega');
-            $table->string('prioridade');
-            $table->string('descricao');
-            $table->string('situacao');
         });
     }
 
@@ -34,6 +30,6 @@ class CreateTarefas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tarefas');
+        Schema::dropIfExists('projetos');
     }
 }
